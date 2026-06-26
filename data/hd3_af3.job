@@ -1,0 +1,13 @@
+#!/bin/bash
+#SBATCH --job-name=test
+#SBATCH --output=test1.out
+#SBATCH --error=test1.err
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=80
+#SBATCH -p short 
+#SBATCH --exclude node011
+
+source .venv/bin/activate
+
+~/02_rankab/external_test_set/arne_e_set/redo/.venv/bin/haddock3 /trinity/login/xxu/hd_antibody/data/hd3_af3.cfg 
+
